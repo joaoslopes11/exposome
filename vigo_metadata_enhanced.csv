@@ -1,0 +1,51 @@
+﻿run_id,postal_code,country,age,sex,bmi,health_status,phenotype,region,smoking_status,secondhand_smoke,smoking_start_age,quit_years,occupation_exposures,occupation_years,protection_equipment,diet_pattern,fruit_veg_consumption,processed_meat,activity_level,family_history,respiratory_conditions
+VIGO_ENH_001,36206,spain,46,female,23.0,Healthy,None,Vigo - Coia,current_moderate,none,26,0,firefighting,15,moderate,mediterranean,moderate,moderate,sedentary,heart_disease,
+VIGO_ENH_002,36210,spain,78,female,32.7,Healthy,None,Vigo - Bouzas,never,occasional,0,0,transport,30,poor,western,low,moderate,light,,asthma
+VIGO_ENH_003,36202,spain,66,female,29.2,Healthy,None,Vigo - Casco Vello,current_moderate,none,21,0,healthcare,8,good,mediterranean,moderate,high,moderate,,
+VIGO_ENH_004,36370,spain,59,female,23.2,Non-Healthy,hypertension,Nigrán,never,none,0,0,agriculture,12,poor,mediterranean,low,moderate,active,,asthma
+VIGO_ENH_005,36790,spain,63,female,22.2,Healthy,None,Oia,former,none,19,29,,0,moderate,asian,low,moderate,light,heart_disease,
+VIGO_ENH_006,36201,spain,72,female,27.1,Healthy,None,Vigo Centro,never,none,0,0,healthcare,26,good,mediterranean,moderate,veryhigh,light,stroke,
+VIGO_ENH_007,36780,spain,58,male,25.4,Healthy,None,A Guarda,never,none,0,0,healthcare,29,moderate,mediterranean,verylow,high,sedentary,,allergies
+VIGO_ENH_008,36212,spain,54,female,26.2,Healthy,None,Vigo - Freixeiro,current_light,occasional,24,0,healthcare,30,good,mediterranean,moderate,high,sedentary,,
+VIGO_ENH_009,36202,spain,56,female,31.1,Healthy,None,Vigo - Casco Vello,never,none,0,0,,0,moderate,mediterranean,high,moderate,active,,
+VIGO_ENH_010,36214,spain,61,male,26.1,Healthy,None,Vigo - Lavadores,never,occasional,0,0,construction,37,good,mediterranean,low,low,light,,
+VIGO_ENH_011,36370,spain,80,female,24.4,Healthy,None,Nigrán,never,none,0,0,firefighting,21,good,mediterranean,moderate,moderate,veryactive,,allergies
+VIGO_ENH_012,36950,spain,70,male,22.3,Healthy,None,Moaña,current_moderate,none,18,0,transport,34,poor,mediterranean,high,high,light,,
+VIGO_ENH_013,36780,spain,54,female,28.4,Healthy,None,A Guarda,never,none,0,0,healthcare,26,moderate,mediterranean,low,low,veryactive,breast_cancer,
+VIGO_ENH_014,36210,spain,30,male,29.7,Healthy,None,Vigo - Bouzas,current_light,none,18,0,agriculture,9,good,western,low,high,moderate,,
+VIGO_ENH_015,36400,spain,27,male,24.3,Healthy,None,Porriño,never,none,0,0,agriculture,8,poor,western,moderate,veryhigh,light,,allergies
+VIGO_ENH_016,36201,spain,44,female,25.7,Healthy,None,Vigo Centro,current_moderate,occasional,14,0,transport,2,moderate,mediterranean,low,moderate,light,,
+VIGO_ENH_017,36214,spain,31,male,29.5,Non-Healthy,heart disease,Vigo - Lavadores,current_light,none,14,0,healthcare,8,moderate,mediterranean,high,high,moderate,,
+VIGO_ENH_018,36300,spain,41,female,22.6,Non-Healthy,type 2 diabetes,Baiona,current_light,daily,20,0,transport,22,poor,mediterranean,moderate,moderate,veryactive,,
+VIGO_ENH_019,36700,spain,65,male,31.4,Healthy,None,Tui,former,frequent,21,34,transport,26,moderate,mediterranean,low,moderate,active,heart_disease,
+VIGO_ENH_020,36790,spain,51,female,17.0,Healthy,None,Oia,former,none,15,30,agriculture,18,none,western,high,moderate,active,diabetes,
+VIGO_ENH_021,36790,spain,73,female,23.7,Healthy,None,Oia,current_light,none,27,0,agriculture,30,poor,western,high,moderate,veryactive,lung_cancer,asthma
+VIGO_ENH_022,36206,spain,41,female,30.4,Healthy,None,Vigo - Coia,never,none,0,0,,0,moderate,mixed,moderate,high,sedentary,,allergies
+VIGO_ENH_023,36770,spain,70,male,25.8,Healthy,None,O Rosal,current_heavy,none,21,0,manufacturing,23,poor,asian,high,low,moderate,,
+VIGO_ENH_024,36208,spain,69,male,24.4,Healthy,None,Vigo - Teis,former,occasional,22,4,manufacturing,41,moderate,mediterranean,moderate,low,active,lung_cancer,
+VIGO_ENH_025,36211,spain,65,male,25.3,Healthy,None,Vigo - Navia,current_heavy,frequent,26,0,,0,moderate,mediterranean,high,moderate,active,,
+VIGO_ENH_026,36212,spain,57,male,26.5,Non-Healthy,heart disease,Vigo - Freixeiro,former,frequent,14,13,mining,36,moderate,western,low,veryhigh,active,lung_cancer,
+VIGO_ENH_027,36950,spain,69,male,32.2,Healthy,None,Moaña,never,none,0,0,healthcare,41,moderate,mediterranean,moderate,moderate,active,breast_cancer,
+VIGO_ENH_028,36950,spain,52,female,26.3,Healthy,None,Moaña,never,occasional,0,0,,0,moderate,mediterranean,high,veryhigh,light,,
+VIGO_ENH_029,36201,spain,29,male,23.5,Healthy,None,Vigo Centro,former,none,25,7,,0,moderate,mediterranean,high,moderate,sedentary,heart_disease,
+VIGO_ENH_030,36206,spain,51,male,33.3,Healthy,None,Vigo - Coia,current_light,none,26,0,,0,moderate,western,low,low,active,,asthma
+VIGO_ENH_031,36380,spain,51,female,19.2,Non-Healthy,hypertension,Gondomar,current_moderate,none,15,0,construction,25,moderate,mediterranean,moderate,moderate,light,heart_disease,copd
+VIGO_ENH_032,36212,spain,67,female,22.6,Healthy,None,Vigo - Freixeiro,former,frequent,25,24,transport,15,moderate,mediterranean,low,high,light,heart_disease,
+VIGO_ENH_033,36202,spain,68,male,25.2,Healthy,None,Vigo - Casco Vello,never,none,0,0,transport,32,moderate,western,high,veryhigh,moderate,,allergies
+VIGO_ENH_034,36300,spain,83,male,26.4,Healthy,None,Baiona,former,none,17,33,construction,33,moderate,mediterranean,moderate,low,sedentary,diabetes,allergies
+VIGO_ENH_035,36214,spain,40,female,26.2,Healthy,None,Vigo - Lavadores,current_moderate,frequent,22,0,construction,9,moderate,vegetarian,moderate,high,light,,copd
+VIGO_ENH_036,36770,spain,57,female,25.6,Healthy,None,O Rosal,former,none,22,14,manufacturing,23,moderate,mediterranean,high,moderate,moderate,,
+VIGO_ENH_037,36740,spain,38,male,20.8,Healthy,None,Tomino,former,none,25,10,agriculture,15,good,mediterranean,high,high,active,diabetes,
+VIGO_ENH_038,36300,spain,66,female,29.8,Healthy,None,Baiona,former,none,22,34,,0,moderate,asian,moderate,moderate,moderate,,allergies
+VIGO_ENH_039,36800,spain,53,female,27.9,Healthy,None,Redondela,former,daily,23,14,manufacturing,5,good,mediterranean,verylow,moderate,moderate,,
+VIGO_ENH_040,36214,spain,38,male,23.1,Non-Healthy,hypertension,Vigo - Lavadores,former,none,14,12,,0,moderate,mediterranean,low,low,sedentary,thyroid_disorders,
+VIGO_ENH_041,36940,spain,51,male,31.7,Healthy,None,Cangas,never,none,0,0,firefighting,5,moderate,western,moderate,moderate,veryactive,thyroid_disorders,
+VIGO_ENH_042,36770,spain,44,male,29.1,Healthy,None,O Rosal,current_heavy,none,26,0,agriculture,5,none,mediterranean,moderate,low,light,,
+VIGO_ENH_043,36370,spain,22,male,25.8,Healthy,None,Nigrán,former,none,20,20,manufacturing,2,good,mediterranean,high,low,active,diabetes,
+VIGO_ENH_044,36380,spain,63,female,26.7,Non-Healthy,obesity,Gondomar,former,frequent,14,26,healthcare,12,good,western,high,high,veryactive,,
+VIGO_ENH_045,36940,spain,34,female,24.5,Healthy,None,Cangas,current_light,none,26,0,manufacturing,2,moderate,mediterranean,moderate,high,active,,
+VIGO_ENH_046,36370,spain,49,male,27.2,Healthy,None,Nigrán,never,none,0,0,transport,15,moderate,mediterranean,moderate,moderate,moderate,heart_disease,asthma
+VIGO_ENH_047,36208,spain,38,female,24.8,Healthy,None,Vigo - Teis,current_heavy,occasional,15,0,construction,12,good,mediterranean,low,moderate,light,thyroid_disorders,
+VIGO_ENH_048,36300,spain,79,male,32.6,Healthy,None,Baiona,never,none,0,0,,0,moderate,mediterranean,high,low,veryactive,stroke,copd
+VIGO_ENH_049,36206,spain,43,male,29.6,Healthy,None,Vigo - Coia,never,occasional,0,0,firefighting,17,none,western,moderate,low,active,,allergies
+VIGO_ENH_050,36780,spain,57,male,23.8,Non-Healthy,breast cancer,A Guarda,current_light,none,14,0,transport,13,moderate,western,high,moderate,light,,
