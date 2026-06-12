@@ -38,6 +38,40 @@ OPENMETEO_AIR_QUALITY = 'https://air-quality-api.open-meteo.com/v1/air-quality'
 GEOCODING_API = 'https://nominatim.openstreetmap.org/search'
 
 # ============================================================================
+# ERROR HANDLING
+# ============================================================================
+
+class ExposomeAPIError(Exception):
+    """Raised when external APIs (Open-Meteo, Nominatim) fail unrecoverably.
+
+    The pipeline orchestrator catches this and marks just that sample as
+    EXPOSOME_FAILED in the unified report, letting other samples in the
+    batch complete normally. We raise loudly instead of silently substituting
+    synthetic data, because patient predictions must never be fabricated.
+    """
+    pass
+
+
+def _retry_with_backoff(fn, *, attempts: int = 3, base_delay: float = 2.0, what: str = "API call"):
+    """Run fn() with exponential backoff. Raises ExposomeAPIError on final failure.
+
+    Delays: 2s, 4s, 8s (default). Handles transient API hiccups (rate limits,
+    timeouts, intermittent 5xx) without masking persistent outages.
+    """
+    last_err = None
+    for i in range(attempts):
+        try:
+            return fn()
+        except Exception as e:
+            last_err = e
+            if i < attempts - 1:
+                delay = base_delay * (2 ** i)
+                print(f"     ⚠ {what} failed (attempt {i+1}/{attempts}): {e} — retrying in {delay:.0f}s")
+                time.sleep(delay)
+    raise ExposomeAPIError(f"{what} failed after {attempts} attempts: {last_err}")
+
+
+# ============================================================================
 # CACHE MANAGEMENT
 # ============================================================================
 
@@ -708,19 +742,24 @@ def process_exposome_risks(input_file: str, output_folder: Optional[str] = None,
         min_birth = CURRENT_YEAR - max(ages) if ages else 1970
         
         try:
-            weather = APIClient.fetch_historical_weather(loc['lat'], loc['lon'], min_birth)
-            air = APIClient.fetch_historical_air_quality(loc['lat'], loc['lon'], min_birth)
+            weather = _retry_with_backoff(
+                lambda: APIClient.fetch_historical_weather(loc['lat'], loc['lon'], min_birth),
+                what=f"weather fetch for {key}"
+            )
+            air = _retry_with_backoff(
+                lambda: APIClient.fetch_historical_air_quality(loc['lat'], loc['lon'], min_birth),
+                what=f"air quality fetch for {key}"
+            )
             noise = APIClient.estimate_noise(loc['lat'], loc['lon'], loc['type'])
             env_data[key] = {'weather': weather, 'air': air, 'noise': noise}
             print(f"     ✓ Got data for {key}: {len(weather)} weather years, {len(air)} air years, {noise} dB noise")
-        except Exception as e:
-            print(f"     Error fetching data for location {key}: {e}")
-            # Use synthetic data as fallback
-            env_data[key] = {
-                'weather': APIClient._generate_synthetic_weather(loc['lat'], min_birth),
-                'air': APIClient._generate_synthetic_air_quality(loc['lat'], min_birth),
-                'noise': 45
-            }
+        except ExposomeAPIError as e:
+            # Fail loud, not silent. Orchestrator picks up the error and marks
+            # this sample's exposome as unavailable — other samples in the
+            # batch continue normally. Never substitute synthetic data for
+            # real patient predictions.
+            print(f"     ✗ {e}")
+            raise
     
     # Calculate risks
     print("\n[5/7] Calculating risks...")
