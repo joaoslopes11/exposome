@@ -821,26 +821,40 @@ def process_exposome_risks(input_file: str, output_folder: Optional[str] = None,
 # ============================================================================
 
 if __name__ == "__main__":
-    input_file = 'vigo_metadata_enhanced.csv'
-    
-    if os.path.exists(input_file):
-        results = process_exposome_risks(
-            input_file=input_file,
-            output_folder='./exposome_results',
-            sample_limit=20,  # Process all 20 samples
-            use_parallel=False,
-            max_workers=2
-        )
-        
-        print("\n📋 Sample Results:")
-        display_cols = ['run_id', 'CEI', 'CEI_Level', 'Air_Pollution', 'Smoking', 'Diet']
-        available = [c for c in display_cols if c in results.columns]
-        if available:
-            print(results[available].head(10))
-        else:
-            print(results.head())
+    import argparse
+
+    ap = argparse.ArgumentParser(
+        description="Compute Cumulative Exposome Index (CEI) from a metadata CSV."
+    )
+    ap.add_argument("--input", required=True,
+                    help="Path to input metadata CSV (must contain run_id, postal_code, country, etc.)")
+    ap.add_argument("--output", default="./exposome_results",
+                    help="Output directory for results (default: ./exposome_results)")
+    ap.add_argument("--samples", type=int, default=None,
+                    help="Limit to first N samples (default: process all)")
+    ap.add_argument("--parallel", action="store_true",
+                    help="Enable parallel processing (default: off)")
+    args = ap.parse_args()
+
+    if not os.path.exists(args.input):
+        print(f"Error: input file not found: {args.input}")
+        raise SystemExit(1)
+
+    results = process_exposome_risks(
+        input_file=args.input,
+        output_folder=args.output,
+        sample_limit=args.samples,
+        use_parallel=args.parallel,
+        max_workers=2,
+    )
+
+    print("\n📋 Sample Results:")
+    display_cols = ['run_id', 'CEI', 'CEI_Level', 'Air_Pollution', 'Smoking', 'Diet']
+    available = [c for c in display_cols if c in results.columns]
+    if available:
+        print(results[available].head(10))
     else:
-        print(f"File not found: {input_file}")
+        print(results.head())
 
 
 # In[ ]:
